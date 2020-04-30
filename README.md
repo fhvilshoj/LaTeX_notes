@@ -15,7 +15,7 @@ function notes() { git clone git@github.com:fhvilshoj/LaTeX_notes.git $@ ;}
 This will allow you to afterwards clone the repo as
 
 ```bash
-> notepad lecture1_notes
+> notes lecture1_notes
 ```
 
 Which will clone the repo into a directory called `lecture1_notes`.
