@@ -1,0 +1,16 @@
+\documentclass[10pt]{article}
+\input{preamble}
+
+\title{} % Insert Title
+\author{} % Insert author
+\newcommand\numpages{10} % Number of pages
+
+\begin{document}
+
+\whiledo {\value{ct} < \numpages}%
+{%
+	~ \newpage
+	\stepcounter {ct}%
+}
+
+\end{document}

@@ -1,0 +1,41 @@
+\usepackage[utf8]{inputenc}
+\usepackage{tikz, background, titling, setspace}
+\usetikzlibrary{calc}
+
+\usepackage[left=1in, right=0.50in, top=0.75in, bottom=1.in]{geometry}
+\usepackage{tabu}
+\usepackage{ifthen}
+
+
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{\thepage\ of \pageref{LastPage}}
+
+\backgroundsetup{%
+ position=current page.center,
+ angle=0,
+ scale=1,
+ contents={%
+  \begin{tikzpicture}%
+    [
+      normal lines/.style={gray, thin},
+      grid lines/.style={gray!40, very thin},
+      every node/.append style={black, align=center, opacity=1}
+    ]
+    \foreach \y in {0.9, 1.05,...,10.5} {  \draw[grid lines] (1in,\y in) -- (8in,\y in); }
+    \foreach \x in {1, 1.15,...,8}          {  \draw[grid lines] (\x in,0.8in) -- (\x in,10.5 in); }
+    \draw[normal lines] (1in,0) -- (1in,11in);
+    \draw[normal lines] (8in,0) -- (8in,11in);
+    \draw[normal lines] (0in,10.5in) -- (8.5in,10.5in);
+    \draw[normal lines] (0in,0.8in) -- (8.5in,0.8in);
+    \node (t) [font=\Large, anchor=west] at (1.3in, 10.725in) {\thetitle};
+    \node (t) [font=\Large, anchor=east] at (7.7in, 10.725in) {\theauthor};
+  \end{tikzpicture}%
+}}
+
+\newcounter{ct}
+\setcounter{ct}{0}
+
